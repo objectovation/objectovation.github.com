@@ -1,0 +1,105 @@
+
+@import "../vendor/less/variables.less"; // Modify this for custom colors, font-sizes, etc
+
+body {
+  background-image: url('../img/PhotoGray_browser_bg-2.jpg');
+  background-color: black;
+}
+
+
+
+// Desktop
+.hero-unit {
+  padding: 40px 60px 60px 60px;
+  background-image: url('../img/Darkroom_spotlight.jpg');
+  background-size:100% 100%;
+  background-repeat:no-repeat;
+  background-color: transparent;  
+}
+
+
+.logo {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.more {
+  background-color: gray;
+  padding-left: 5px;
+  padding-right: 5px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;  
+  display: none;
+}
+
+// Phones only
+@media (max-width: 767px) {
+  .hero-unit { 
+    padding: 20px 20px 10px 10px;
+    background-repeat:no-repeat;
+    background-color: transparent;  
+
+    p {
+      font-size: @baseFontSize;
+      font-weight: normal;
+      line-height: @baseLineHeight;
+    }
+  }  
+
+  .logo {
+    padding-bottom: 10px;
+  }
+
+  .more {
+    display: inline;
+  }
+
+}
+
+// Tablets & small desktops only
+@media (min-width: 768px) and (max-width: 979px) {
+  .hero-unit {
+    padding: 40px 60px 60px 60px;
+    background-size:100% 100%;
+    background-repeat:no-repeat;
+    background-color: transparent;  
+  }  
+}
+
+
+.team-column {
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+
+.team-spacer-column {
+  padding-top: 40px;
+}
+
+.name-row {
+  padding-top: 10px;
+  font: 150% "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+}
+
+.responsive-indicator {
+  text-align: center;
+  cursor: pointer;
+}
+
+.page-header {
+  padding-bottom: 17px;
+  margin: 18px 0;
+  border-bottom: 1px solid @ooBlue;
+}
+
+footer {
+  padding-top: 5px;
+  border-top: 1px solid @ooBlue;
+  color: @gray;
+}
+
+h1 {
+  color: @ooBlue;
+}
