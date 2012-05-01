@@ -4,10 +4,7 @@ body {
 }
 .hero-unit {
   padding: 40px 60px 60px 60px;
-  background-image: url('../img/Darkroom_spotlight.jpg');
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-color: transparent;
+  background-image: url('../img/PhotoGray_bg_c-1.jpg');
 }
 .logo {
   text-align: center;
@@ -25,8 +22,6 @@ body {
 @media (max-width: 767px) {
   .hero-unit {
     padding: 20px 20px 10px 10px;
-    background-repeat: no-repeat;
-    background-color: transparent;
   }
   .hero-unit p {
     font-size: 13px;
@@ -43,9 +38,6 @@ body {
 @media (min-width: 768px) and (max-width: 979px) {
   .hero-unit {
     padding: 40px 60px 60px 60px;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-color: transparent;
   }
 }
 .team-column {
