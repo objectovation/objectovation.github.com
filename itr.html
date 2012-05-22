@@ -36,9 +36,10 @@
         function install(el, version) 
         {
             el.style.backgroundColor='blue'
-            var href = document.getElementById('link')
-            href.href = 'itms-services://?action=download-manifest&url=http://objectovation.com/' + version + '.plist';
-            href.click();
+            var a = document.createElement('a')
+            a.href = 'itms-services://?action=download-manifest&url=http://objectovation.com/' + version + '.plist'
+            document.body.appendChild(a)
+            a.click()
         }
         </script>
 </head>
@@ -68,7 +69,6 @@
                 </tr>
         </table>
 </div>
-<a id="link" href="#"></a>
  
 </body>
 </html>
