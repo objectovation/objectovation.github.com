@@ -32,36 +32,34 @@
                         width: 100%;
                 }
         </style>
-        <script type="text/javascript">
-        function install(el, version) 
-        {
-            el.style.backgroundColor='blue'
-            document.location.href = 'itms-services://?action=download-manifest&url=http://objectovation.com/' + version + '.plist'
-        }
-        </script>
+
 </head>
 <body>
  
 <div class="congrats"><img src="lb-foster.png"></div>
  
-<div class="step" onclick="install(this, 'itr-tf')">
+<div class="step">
         <table>
                 <tr>
                         <td class="instructions">Install the<br />IntelliTrackReader 1.4.4 TF</td>
                         <td width="24" class="arrow">&rarr;</td>
                         <td width="57" class="imagelink">
-                                <img src="itr-icon.png" height="57" width="57" />
+                                <a href="itms-services://?action=download-manifest&url=http://objectovation.com/itr-tf.plist">
+                                        <img src="itr-icon.png" height="57" width="57" />
+                                 </a>
                         </td>
                 </tr>
         </table>
 </div>
-<div class="step" onclick="install(this, 'itr')">
+<div class="step">
         <table>
                 <tr>
                         <td class="instructions">Install the<br />IntelliTrackReader 1.4.4</td>
                         <td width="24" class="arrow">&rarr;</td>
                         <td width="57" class="imagelink">
-                                <img src="itr-icon.png" height="57" width="57" />
+                                <a href="itms-services://?action=download-manifest&url=http://objectovation.com/itr.plist">
+                                        <img src="itr-icon.png" height="57" width="57" />
+                                 </a>
                         </td>
                 </tr>
         </table>
