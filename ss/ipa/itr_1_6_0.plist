@@ -19,11 +19,11 @@
 				<key>bundle-identifier</key>
 				<string>com.salientsystems.IntelliTrackReader</string>
 				<key>bundle-version</key>
-				<string>1.4.6</string>
+				<string>1.6.0</string>
 				<key>kind</key>
 				<string>software</string>
 				<key>title</key>
-				<string>ITR 1.4.6</string>
+				<string>ITR 1.6.0</string>
 			</dict>
 		</dict>
 	</array>
