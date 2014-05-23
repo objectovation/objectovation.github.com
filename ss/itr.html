@@ -28,6 +28,13 @@
                         border-radius: 14px;
                         padding: 4px 10px;
                         margin: 10px 0;
+                }                
+                .msg {
+                        background: #fffa65;
+                        border: 1px #ccc solid;
+                        border-radius: 14px;
+                        padding: 4px 10px;
+                        margin: 10px 0;
                 }
                 .instructions {
                         font-size: 10pt;
@@ -45,20 +52,47 @@
                 }
         </style>
         <script type="text/javascript">
+        var iOS = parseFloat(('' + (/CPU.*OS ([0-9_]{1,5})|(CPU like).*AppleWebKit.*Mobile/i.exec(navigator.userAgent) || [0,''])[1]).replace('undefined', '3_2').replace('_', '.').replace('_', '')) || false;
+
         function feedback(el, id) {
             el.style.color = '#000000'
             document.getElementById(id).style.background = 'blue'
             return true
         }
+
+        function show(id) {
+            document.getElementById(id).style.display = 'block';
+        }
+
+        function showAppLink() {
+            if (iOS >= 6 && iOS < 7) {
+                show("itr_1_7_0");
+            }
+            else if (iOS >= 5 && iOS < 6) {
+                show("need_ios6");
+                show("itr_1_6_1");
+            }
+            else 
+                show("need_ios6");
+        }
+
         </script>
 
 </head>
-<body>
+<body onload="showAppLink()">
  
 <div class="congrats"><img src="lb-foster.png"></div>
-<!-- 
-<a href="itms-services://?action=download-manifest&url=https://dl.dropboxusercontent.com/u/2181264/SalientSystems/itr_1_7_0.plist" onclick="feedback(this, 'itr_1_7_0')">
-    <div class="step" id="itr_1_7_0">
+
+<div class="msg" id="need_ios6" style="display:none">
+        <table>
+                <tr>
+                        <td class="instructions">iOS 6 is required for IntelliTrackReader 1.7.0<br /><span class="instructions-sm"></span></td>
+                </tr>
+        </table>
+</div>
+
+<a href="itms-services://?action=download-manifest&url=http://objectovation.com/ss/ipa/itr_1_7_0.plist" onclick="feedback(this, 'itr_1_7_0')">
+    <div class="step" id="itr_1_7_0" style="display:none">
             <table>
                     <tr>
                             <td class="instructions">Tap to install<br />IntelliTrackReader 1.7.0<br /><span class="instructions-sm">Supports iOS 6<br>Expires 2/6/2015</span></td>
@@ -70,9 +104,9 @@
             </table>
     </div>
 </a>
- -->
+
 <a href="itms-services://?action=download-manifest&url=http://objectovation.com/ss/ipa/itr_1_6_1.plist" onclick="feedback(this, 'itr_1_6_1')">
-    <div class="step" id="itr_1_6_1">
+    <div class="step" id="itr_1_6_1" style="display:none">
             <table>
                     <tr>
                             <td class="instructions">Tap to install<br />IntelliTrackReader 1.6.1<br /><span class="instructions-sm">Supports iOS 5 - iOS 6.1<br>Expires 2/6/2015</span></td>
@@ -84,35 +118,6 @@
             </table>
     </div>
 </a>
- 
-<!-- <a href="itms-services://?action=download-manifest&url=http://objectovation.com/ss/ipa/itr_1_6_0.plist" onclick="feedback(this, 'itr_1_6_0')">
-    <div class="step" id="itr_1_6_0">
-            <table>
-                    <tr>
-                            <td class="instructions">Tap to install<br />IntelliTrackReader 1.6.0<br /><span class="instructions-sm">Supports iOS 4 and iOS 5</span></td>
-                            <td width="24" class="arrow">&rarr;</td>
-                            <td width="57" class="imagelink">
-                                <img src="itr-icon.png" height="57" width="57" />
-                            </td>
-                    </tr>
-            </table>
-    </div>
-</a>
- 
-<a href="itms-services://?action=download-manifest&url=http://objectovation.com/ss/ipa/itr_1_4_7.plist" onclick="feedback(this, 'itr')">
-    <div class="step" id="itr">
-            <table>
-                    <tr>
-                            <td class="instructions">Tap to install<br />IntelliTrackReader 1.4.7<br /><span class="instructions-sm">Supports iOS 4 only</span></td>
-                            <td width="24" class="arrow">&rarr;</td>
-                            <td width="57" class="imagelink">
-                                <img src="itr-icon.png" height="57" width="57" />
-                            </td>
-                    </tr>
-            </table>
-    </div>
-</a>
- --> 
 
 <a href="itr.mobileconfig"><span class="instructions-sm">Reinstall configuration profile</span></a>
 
